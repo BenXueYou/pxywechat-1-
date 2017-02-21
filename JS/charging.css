@@ -1,0 +1,47 @@
+*{
+margin:0;
+padding:0;}
+
+body{
+	text-align:center;
+}
+#back img{
+			width: 98%;
+			height: 50%;
+			margin:1%;
+		}
+#base{
+	text-align:center;
+    margin:0 auto;
+    
+}
+		
+.ulImg {
+    list-style-type: none;
+	width:98%;
+    background-color:white;
+	height:150px;
+    overflow:hidden;
+    margin:0 auto;
+}
+		
+.ul_li{
+	float:left;
+	display: block;
+	text-align: center;
+	width: 20%;
+	height: 100%;
+    margin:2.5%;
+    
+}
+
+.zz{
+   	background-color:white;
+	height: 60px;
+	
+}
+.zz img{
+	background-color:0#299dff;
+	width: 50px;
+	height: 50px;
+}

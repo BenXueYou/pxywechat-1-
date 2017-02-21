@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=8">
+        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Cache-control" content="no-cache">
+        <meta http-equiv="Cache" content="no-cache">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+		<title>预约充电</title>   
+        <link rel="icon" href="../../../img/logo.png" type="image/x-icon"/>
+        <script type="text/javascript" src="../../JS/jquery-3.0.0.min.js" ></script>
+        <script type="text/javascript" src="../../JS/area.js"></script>
+        <script type="text/javascript" src="../../JS/location.js"></script>
+        <link href="../../JS/common.css" rel="stylesheet"/>
+        <link href="../../JS/select2.css" rel="stylesheet"/>
+        <script src="../../JS/select2.js"></script>
+        <script src="../../JS/select2_locale_zh-CN.js"></script>
+        
+		<style type="text/css">
+            
+			*{
+				padding: 0;
+				margin: 0;
+                font-size:15px;
+			}
+            ul{
+                width:98%;
+            	border-top: 1px solid lightgray;
+            }
+            span{
+                font-size:16px;
+            }
+			.top_menu{
+                margin:10px auto;
+				height: 50px;
+				border-bottom: 1px solid lightgray;
+			}
+			.top_menu ul{
+				
+				width: 80%;
+				overflow: hidden;
+				margin: 0 auto;
+				/*border-radius: 5px;*/
+				
+				/*background-color: blue;*/
+			}
+			.top_menu li{
+				list-style-type: none;
+				float: left;
+				width: 49%;
+				text-align: center;
+				line-height: 40px;
+				border-radius: 5px;
+			/*	margin-right: 2px;*/
+				border: 1px solid lightgray;
+				/*background-color: red;*/
+			}
+			input{
+				height: 25px;
+                margin:0px 5px;
+                border:1px solid lightgrey;
+                outline: none;
+			}
+			.top_menu .active{
+				color: orange;
+				border: 1px solid orange;
+			}
+			
+			.menu1 .lf_menu{
+				width: 98%;
+				margin: 10px auto;
+                
+				border-bottom: 1px solid lightgray;
+				height: 50px;
+				line-height: 50px;
+                font-size:18px;
+			}
+            .menu1 button{
+                width:50px;
+                height:30px;
+                border-radius:5px;
+            }
+           
+			.lf_li{
+				/*background-color: cadetblue;*/
+				list-style-type: none;
+				border-bottom:1px solid lightgray;
+				overflow: hidden;
+				padding: 10px;
+			}
+			.lf_li img{
+				width: 45px;
+				height: 50px;
+				float: left;
+			}
+			.lf_li div{
+                /*background-color: red;*/
+				float: left;
+				width:calc(100% - 130px);
+				line-height: 30px;
+				margin-left: 20px;
+			}
+            .lf_li div .range{
+                width:60px;
+                float:right;
+                
+            }
+			.lf_li span{
+				width: 50px;
+				float: right;
+				line-height: 30px;
+				border: 1px solid orange;
+				font-size: 14px;
+				padding:2px 5px;
+				border-radius: 5px;
+                color:orange;
+			}
+		
+		
+            .top_title{
+                
+                margin-left:30px;
+            }
+            .main_input{
+                margin:10px 15%;
+                width:50px;
+                height:30px;
+                border-radius:5px;
+            }
+            .pay_btn{
+                width:30%;
+                height:30px;
+                margin:10px 8% 10px 10%;
+            }
+		</style>
+	</head>
+	<body>
+		<div class="top_menu">
+			<ul>
+				<li class="active" id="leftBtn">预约附近</li>
+				<li id="rightBtn">预约某地</li>
+			</ul>
+		</div>
+		<div class="menu1">
+			<div class="lf_menu"><span>附近</span>
+                <input type="text" name="distance" id="distance" value="" placeholder="请输入"/>
+                <span>千米</span>
+                <button>搜索</button>
+            </div>
+			<ul>
+				<li class="lf_li"><img src="../../img/scan_charging_img.png"/><div id="lf_li_ad1">
+				上海市杨浦区长阳路1080号	
+				</div><div id="lf_li_cpid1">
+				009号<div class="range">
+					0.5千米
+				</div>			
+				</div><span id="lf_li_state1">
+					可预约
+				</span></li>
+				
+                <li class="lf_li"><img src="../../img/scan_charging_img.png"/><div id="lf_li_ad1">
+				上海市杨浦区长阳路1080号	
+				</div><div id="lf_li_cpid1">
+                    009号<div class="range">
+					0.5千米
+				</div>	
+				</div><span id="lf_li_state1">
+					可预约
+				</span></li>
+				
+                <li class="lf_li"><img src="../../img/scan_charging_img.png"/><div id="lf_li_ad1">
+				上海市杨浦区长阳路1080号	
+				</div><div id="lf_li_cpid1">
+				009号<div class="range">
+					0.5千米
+				</div>			
+				</div><span id="lf_li_state1">
+					可预约
+				</span></li>
+				
+                <li class="lf_li"><img src="../../img/scan_charging_img.png"/><div id="lf_li_ad1">
+				上海市杨浦区长阳路1080号	
+				</div><div id="lf_li_cpid1">
+				009号<div class="range">
+					0.5千米
+				</div>			
+				</div><span id="lf_li_state1">
+					可预约
+				</span></li>
+			</ul>
+		</div>
+		<div class="menu2">
+			<div class="main">
+			  <select id="loc_province" style="width:120px;"></select>	
+			  <select id="loc_city" style="width:120px;"></select>
+			  <select id="loc_town" style="width:120px;"></select>
+		   	  <br><br>
+		  	  <div class="top_title">
+				充电站站点：
+				<input placeholder="街道/小区"/>
+		 	  </div>
+		      <br>
+		      <div class="top_title">
+			    充电桩编号：
+                <input  />
+		     </div>
+		   <br>
+                <div>
+                 <input class="pay_btn" type="button" id="btnval" value="获取附近桩" />
+		  		 <input class="pay_btn" type="button" id="btntext" value="确定预约桩" />
+                </div>
+             <ul>
+				<li class="lf_li"><img src="../../img/scan_charging_img.png"/><div id="lf_li_ad1">
+				上海市杨浦区长阳路1080号	
+				</div><div id="lf_li_cpid1">
+				009号<div class="range">
+					0.5千米
+				</div>			
+				</div><span id="lf_li_state1">
+					可预约
+				</span></li>
+				
+                <li class="lf_li"><img src="../../img/scan_charging_img.png"/><div id="lf_li_ad1">
+				上海市杨浦区长阳路1080号	
+				</div><div id="lf_li_cpid1">
+                    009号<div class="range">
+					0.5千米
+				</div>	
+				</div><span id="lf_li_state1">
+					可预约
+				</span></li>
+              
+			</ul>   
+		 </div>
+		</div>
+	</body>
+	
+  <script type="text/javascript">
+ 
+  	$(".top_menu li").click(function(){
+				$(this).addClass("active").siblings().removeClass("active");
+				
+				var index = $(this).index();
+				if(index==0){
+					$(".menu2 .main").hide();
+					$(".menu1").show();
+				}else{
+					$(".menu1").hide();
+					$(".menu2 .main").show();
+				}
+			});
+      $(".lf_li span").click(function(){
+          
+          
+          	location.href="../SMCharging/appointBill.html";
+			});
+  </script>
+</html>

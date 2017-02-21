@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+		<title>干货.热文</title>
+		<link rel="stylesheet" type="text/css" href="../JS/swiper-3.3.1.min.css"/>
+		<script type="text/javascript" src="../JS/swiper-3.3.1.min.js" ></script>
+		<script type="text/javascript" src="../JS/jquery-3.0.0.js" ></script>
+		<script type="text/javascript" src="../JS/jquery-3.0.0.min.js" ></script>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			body{background-color: #D3D3D3; }
+			body div{
+				width: 98%;
+				margin: 0 auto;				
+			}
+			.swiper-container{
+				background-color: #299DFF;
+				height: 200px;
+			}
+			.menu{
+				background-color: rgb(244,244,244);
+				height: 40px;
+			}
+			.menu ul{
+				width: 80%;
+				height: 100%;
+				/*background-color: red;*/
+				margin: 0 auto;
+			}
+			.menu li{
+				list-style-type: none;
+				float: left;
+				margin:2.5% 5% 1.5% 5%;
+                padding-top:2%;
+				font-size: 17px;
+				/*background-color: #0000FF;*/
+			}
+			.table{
+				
+				background-color: gray;
+				padding: 0 2px;
+				height:60%;
+				overflow: hidden;
+			}
+			.active{color: rgb(58,159,12 );text-shadow: greenyellow 1px 1px 1px;font-size: 17px;}
+			
+			.table ul li{
+				list-style-type: none;
+			}
+			.cell{
+				width: 100%;
+				height: 100px;
+				background-color: #FFFFFF;
+				margin-bottom: 1px;
+				overflow: hidden;
+			}
+			.icon{
+				display: block;
+				background-color: #299DFF;
+				float: left;
+				margin: 15px 10px;
+			}
+			.txt{
+				/*background-color: #299DFF;*/
+				float: left;
+				display: block;
+				width: 60%;
+				overflow: hidden;
+				margin: 15px 10px;
+			}
+			.txt div{
+				margin:10px 0; 
+				display: block;
+				/*background-color: #FFA500;*/
+			}
+			.textlabel{
+				font-size: 16px;
+			}
+			.detailTextLabel{
+				font-size:14px;
+				color: gray;
+			}
+            .shadow{
+				width: 100%;
+				height: 30px;
+				background-image:linear-gradient(to top,rgba(61,63,52,0.7),rgba(200,200,200,0.7)) ;
+				position: absolute;
+				bottom: 0px;
+				color: white;
+				font-size: 18px;
+				padding: 2% 2%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="swiper-container">
+	    	<div class="swiper-wrapper">
+	    	 	<div class="swiper-slide" style="background-image: url(../../img/01.jpg);"><div class="shadow">
+	    	 		<span id="content1">
+	    	 			新能源汽车充电
+	    	 		</span>
+	    	 	</div></div>
+	        	<div class="swiper-slide" style="background-image: url(../../img/02.jpg);"><div class="shadow">
+	        	    <span id="content2">
+                        新能源汽车充电</span>
+	        	</div></div>
+	        	<div class="swiper-slide" style="background-image: url(../../img/03.jpg);"><div class="shadow">
+	        		<span id="content3">
+	        			新能源汽车充电
+	        		</span>
+	        	</div></div>
+	        	<div class="swiper-slide" style="background-image: url(../../img/04.jpg);"><div class="shadow">
+	        		<span id="content4">
+	        			新能源汽车充电
+	        		</span>
+	       	    </div></div>
+	    	</div>
+	    <!-- 如果需要分页器 -->
+	    	<div class="swiper-pagination"></div>
+	    
+	    <!-- 如果需要导航按钮 -->
+	    	<div class="swiper-button-prev"></div>
+	    	<div class="swiper-button-next"></div>
+	    
+	    <!-- 如果需要滚动条 -->
+	    	<div class="swiper-scrollbar"></div>
+	</div>
+		<div class="menu">
+			<ul>
+				<li class="btn">保养</li>
+				<li class="btn">电池</li>
+				<li class="btn">车友</li>
+				<li class="btn">行业资讯</li>
+			</ul>
+		</div>
+		<div class="table">
+			<ul>
+				<li><div class="cell">
+					<img class="icon" src="../../img/11.jpg"/>
+					<div class="txt">
+						<div class="textlabel">行有灵犀|路途漫漫，你准备好叻么</div>
+						<div class="detailTextLabel">持久动力，续航缩水，旅途就是这么无奈</div>
+					</div>
+				</div></li>
+				<li><div class="cell">
+						<img class="icon" src="../../img/12.jpg"/>
+						<div class="txt">
+							<div class="textlabel">行路必备|漫无目的，续杯请你持平</div>
+							<div class="detailTextLabel">溜达溜达、东顾西环，你就是这么无聊</div>
+						</div>
+				</div></li>
+				<li><div class="cell">
+						<img class="icon" src="../../img/13.jpg"/>
+						<div class="txt">
+							<div class="textlabel">有备无患|居家陆行，你值得拥有</div>
+							<div class="detailTextLabel">西西里呀、酷雅图吧，永不止步</div>
+						</div>
+				</div></li>
+				<li><div class="cell">
+						<img class="icon" src="../../img/14.jpg"/>
+						<div class="txt">
+							<div class="textlabel">居家宜室|登堂入室、居然反客为主？</div>
+							<div class="detailTextLabel">东成西就、德玛西亚、一切皆有可能</div>
+						</div>
+				</div></li>
+				<li><div class="cell">
+						<img class="icon" src="../../img/10.jpg"/>
+						<div class="txt">
+							<div class="textlabel">如家宾至|映纷视觉、就是这么好玩</div>
+							<div class="detailTextLabel">落英缤纷、淅淅沥沥、心动不如行动</div>
+						</div>
+				</div></li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function () {
+		  var mySwiper = new Swiper ('.swiper-container', {
+			    direction: 'horizontal',
+			    loop: true,
+			    
+			    autoplay : 3000,
+				speed:300,
+			    
+			    // 如果需要分页器
+			    pagination: '.swiper-pagination',
+			   
+			    // 如果需要前进后退按钮
+			    nextButton: '.swiper-button-next',
+			    prevButton: '.swiper-button-prev',
+			    
+			    // 如果需要滚动条
+			    scrollbar: '.swiper-scrollbar',
+			  })
+		  
+		 
+			$(".btn").on("click",function(){
+				$(this).addClass("active").siblings().removeClass("active");
+			})
+		
+		})
+	</script>
+</html>

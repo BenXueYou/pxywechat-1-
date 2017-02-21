@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+		<title>正在充电</title>
+		<script type="text/javascript" src="../JS/jquery-3.0.0.js" ></script>
+	<script type="text/javascript" src="../JS/jquery-3.0.0.min.js" ></script>
+		<style type="text/css">
+			body{background-color: rgb(124,159,254);}
+			#top{
+				margin: 0 auto;
+				width: 200px;
+				height: 200px;
+			}
+			#label{
+				background-color:blue;
+				background-image: url(../img/charge.jpg);
+				height: 100%;
+				overflow: hidden;
+				text-align: center;
+				
+			}
+			#top #label div{
+				
+				margin-top: 170px;
+			}
+			span{
+				 font-size: 20px;
+				color: orange;
+				font: '微软雅黑'; 
+				
+			}
+			
+			#mid{
+				margin-top: 5%;
+				background-color:rgb(106,142,244) ;
+				text-align: center;
+				overflow: hidden;
+			}
+			.ch{
+				float: left;
+				margin:2px 20%;
+			}
+			#bot{
+				text-align: center;
+				margin-top: 5%;
+				
+			}
+			#stop{
+				padding: 0px 5%;
+				width: 68%;
+				height: 50px;
+				border-radius: 5px;
+				background-color:rgb(247,192,68) ;
+                color:white;
+                font-size:20px
+			}
+			#refresh{
+				padding: 0px 5%;
+				width: 28%;
+				height: 50px;
+				border-radius: 5px;
+				background-color:rgb(106,142,244) ;
+				margin-left:2% ;
+                color:white;
+                font-size:20px
+			}
+		</style>
+	</head>
+	<body>
+		<div id="top">
+			<div id="label">
+				<div class = "text"><span>正在充电中......</span></div>
+			</div>
+		</div>
+		<div id="mid">
+			<span id="title">
+				<div class="ch" id="time">充电时间：00:11:32</div>
+				<div class="ch" id="fee">充电金额：4.60元</div>
+				<div class="ch" id="quantity">充电电量：0.67 kwh</div>
+				<div class="ch" id="V">电压：221.60 V</div>
+				<div class="ch" id="A">电流：15.37 A</div>
+			</span>
+		</div>
+		<div id="bot">
+			<button id="stop"> 停止充电</button>
+			<button id="refresh">刷新</button>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$.ajax({
+				type: "GET", // 请求方式
+				url: "http://pxywechat.applinzi.com/html/index.php", // 请求地址
+            dataType: "jsonp", // 数据格式类型
+				data:{
+					cpCnt:"10",
+					commstate:"0"
+				},
+				success: function(data) { //data就是返回的json数据
+					console.log(data);
+                    console.log("ddd");
+                    if(data.success) {
+						alert("hello word");
+//						$("#createResult").html(data.msg);
+						
+					} else {
+						alert("hahahahaha");
+//						$("#createResult").html("出现错误：" + data.msg);
+					}
+				},
+				error: function(jqXHR) {
+                    console.log(jqXHR);
+					alert("发生错误：" + jqXHR.status);
+				},
+			});
+	</script>
+	
+</html>

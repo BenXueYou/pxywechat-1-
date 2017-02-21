@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=8">
+        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Cache-control" content="no-cache">
+        <meta http-equiv="Cache" content="no-cache">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+		<title>充电完成</title>
+        <script type="text/javascript" src="../../JS/jquery-3.0.0.js" ></script>
+        <script type="text/javascript" src="../../JS/jquery-3.0.0.min.js" ></script>
+         <script type="text/javascript" src="../../JS/cookie.js" ></script>
+		<style type="text/css">
+			body{background-color: rgb(245,245,245);}
+			#top{
+				margin: 0 auto;
+				width: 250px;
+				height: 190px;
+			}
+			#label{
+				
+                 background:no-repeat;
+                background-image: url(../../img/charging03.png);
+				height: 100%;
+				overflow: hidden;
+				text-align: center;
+				/*vertical-align: middle;*/
+			}
+			#top #label div{
+				/*background-color:red ;*/
+				margin-top: 165px;
+			}
+			span{
+				font-size: 20px;
+				color: black;
+				font: '微软雅黑'; 
+				/*line-height: 30px;*/
+			}
+			
+			#mid{
+				margin-top: 5%;
+				background-color:rgb(251,251,251) ;
+				text-align: center;
+				overflow: hidden;
+               
+			}
+			.ch{
+				width: 90%;
+				float: left;
+				margin:1% 0 1% 10%;
+                overflow: hidden;
+                position:relative;
+				/*padding: 5%;*/
+                
+			}
+			.ch span{
+				display: block;
+				float: left;
+				/*background-color: red;*/
+				margin-left:0px;
+				margin-top: 1%;
+				font-size: 18px;
+                text-align: center;
+               
+			}
+            
+            /*#date{
+                display:block;
+                line-height:20px; 
+                font-size: 18px;
+                
+            }
+            */
+            .ch_span{
+                float:right;
+                position:absolute;
+                right:30%;
+                 
+            }
+			#bot{
+				text-align: center;
+				margin-top: 5%;
+				/*background-color: blue;*/
+			}
+			#drop{
+				text-align: center;
+				overflow: hidden;
+				
+			}
+			#stop{
+				display: block;
+				padding: 15px 1%;
+				width: 20%;
+                font-size:18px;
+			 	color: black;
+				/*background-color:rgb(247,192,68) ;*/
+				float: left;
+			}
+			#clink{
+				float: left;
+				width: 60%;
+				background-color:rgb(106,142,244) ;
+/*				text-align: center;*/
+                position: relative;
+			}
+			.XX{
+					
+					margin:10px;
+					float: left;
+					height:20px;
+					width: 20px;
+                	position:absolute;
+                    bottom:1px;
+                    background-image: url(../../img/assess.png);
+					background-color: red;
+			}
+			
+			.selDiv{
+					display: block;
+					margin:10px;
+					float: left;
+					height:20px;
+					width: 20px;
+                	background-image: url(../../img/assess_select.png);
+			}
+			#accessA{
+				
+				width: 80%;
+				height: 100px;
+				margin:10px auto;
+				background-color:rgb(251,251,251) ;
+				font-size: 15px;
+			}
+			#upload{
+				text-align: center;
+			}
+			#upload button{
+				background-color: orange;
+				width: 40%;
+				height: 50px;
+				line-height: 30px;
+				margin: 50px auto;
+				font-size: 18px;
+			}
+		</style>
+	</head>
+	<body>
+       
+        
+		<div id="top">
+			<div id="label">
+				<div class = "text"><span>充电完成</span></div>
+			</div>
+		</div>
+		<div id="mid">
+			
+                <div class="ch" ><span>账单编号：</span><span class="value" id="bill">320504003</span></div>
+				<div class="ch" ><span>充电时长：</span><span class="value" id="time">00:11:32</span></div>
+				<div class="ch" ><span>充电金额：</span><span class="value" id="fee">4.60</span><span class="ch_span">元</span></div>
+				<div class="ch" ><span>充电电量：</span><span class="value" id="quantity">0.67</span><span class="ch_span">度</span></div>
+                <div class="ch" ><span>完成时间：</span><span class="value" id="date">2016.09.18 00:11:32</span></div>
+			
+		</div>
+	<!--	<div id="bot">
+			<div id="drop">
+				<span id="stop">请评价:</span>
+				<div id="clink">
+					<span class="XX" id = "1"></span>
+					<span class="XX" id = "2"></span>
+					<span class="XX" id = "3"></span>
+					<span class="XX" id = "4"></span>
+					<span class="XX" id = "5"></span>
+				</div>
+			</div>
+			<div id="accessTxt">
+					<input type="text" id="accessA" placeholder="留下您宝贵的意见" />
+				</div>
+		</div>
+        -->
+		<div id="upload">
+			<button id="botBtn" onclick="stepfun()">完成</button>
+		</div>
+	</body>
+    <script type="text/javascript">
+        
+
+	$( ".XX" ).click(function() {
+        
+   
+	  $( this ).toggleClass( "selDiv" );
+        
+	});
+        
+        
+          var h = 0;
+          var min = 0;
+          var s = 0;
+        //点击提交跳转 
+        function stepfun(){
+            
+            
+            
+            var fee = document.getElementById("fee").innerHTML;
+            var quantity = document.getElementById("quantity").innerHTML;
+            //var times=document.getElementById("time").innerHTML;
+            var tDate=document.getElementById("date").innerHTML;
+			
+             var times = h * 3600 + min * 60 + s;
+            
+    
+            // location.href='../SMCharging/getBill.html?fee='+fee+'&quantity='+quantity+'&times='+times+'&tDate='+tDate;
+            
+            // alert("haha");
+            location.href='../SMCharging/scanCode.php';
+            
+            //setCookie("charge","finish","","/");
+           
+            //pushHistory();
+            
+            
+        }
+        
+        //接受上界面传来的参数
+        function GetRequest() {
+            
+            //alert("hello world");
+          var url = location.search;   
+          var theRequest = new Object();  
+          if (url.indexOf("?") != -1) {  
+            var str = url.substr(1);  
+            console.log("111111111"+str);  
+            var strs= new Array();     
+             strs = str.split('&');  
+
+            var V=strs[0].substring(2).trim();  
+            var A=strs[1].substring(2).trim();
+            var fee=(strs[2].substring(4)).trim();
+            var quantity=(strs[3].substring(9)).trim(); 
+            var times=(strs[4].substring(6)).trim(); 
+              
+           
+              
+              if(times >= 60){
+                       
+                   min = times / 60;
+                   s = times%60;
+                  
+                   if(min >= 60){
+                       h = min / 60;
+                    }
+                   
+                }
+                else{
+                    s = parseInt(times);
+                }
+              
+              if(h > 0){
+                       
+                    document.getElementById("time").innerHTML = parseInt(h)+"时"+parseInt(min)+"分"+parseInt(s)+"秒";
+              }else{ 
+                       
+                    document.getElementById("time").innerHTML = parseInt(min)+"分"+parseInt(s)+"秒";
+              }
+
+                     console.log("时间"+h+"+"+min+"+"+s);
+              
+              
+              // alert("laile");
+              
+            //document.getElementById("time").innerHTML = times.toFixed(1);
+			document.getElementById("fee").innerHTML = fee;
+			document.getElementById("quantity").innerHTML = quantity;  
+              
+              
+              //document.getElementById("V").innerHTML = V;  
+              //document.getElementById("A").innerHTML = A;  
+              
+            
+              var ts = new Date();
+              var td = ts.getDate();//day
+              var ty = ts.getFullYear();//
+              var tm = ts.getMonth() + 1;
+              var th = ts.getHours();
+              var tmin = ts.getMinutes();
+ 		      var tsd = ts.getSeconds();
+              var dtime = ty+"-"+(tm<10 ? "0" + tm : tm)+"-"+(td<10 ? "0"+ td : td)+"-"+(th<10 ? "0"+ th : th)+":"+(tmin<10 ? "0" + tmin : tmin)+":"+(tsd<10 ? "0" +tsd : tsd);
+				
+			  document.getElementById("date").innerHTML = dtime;
+						
+             
+      	}  
+	}  
+	GetRequest();  
+           
+        
+ 
+	</script>
+</html>

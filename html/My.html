@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=8">
+        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Cache-control" content="no-cache">
+        <meta http-equiv="Cache" content="no-cache">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+		<link rel="icon" href="img/logo.png" type="image/x-icon"/>
+		<title>个人中心</title>
+        <script type="text/javascript" src="../JS/jquery-3.0.0.min.js" ></script>
+		<style type="text/css">
+		*{padding: 0;margin: 0;}
+			.top_log{
+				width: 100%;
+				height: 160px;
+				background-origin:content-box ;
+				background-clip:content-box ;
+				background-size:contain ;
+				position: relative;
+				text-align: center;
+			}
+			#setting{
+				width: 30px;
+				height: 30px;
+				background-origin:content-box ;
+				background-clip:content-box ;
+				background-size: cover;
+				position: absolute;
+				top: 10px;
+				right: 20px;
+			}
+			.top_log img{
+				width: 60px;
+				height: 60px;
+				position: absolute;
+				left: calc((100% - 60px) / 2);
+				bottom: 60px;
+				text-align: center;
+                border-radius:30px
+				
+			}
+			.top_logo_name{
+				color: white;
+				width: 100%;
+				position: absolute;
+				bottom: 30px;
+				
+			}
+			.section{
+				width: 98%;
+				margin: 0 auto;
+				border-bottom: darkgray solid 1px;
+				margin-bottom: 10px;
+			}
+			.cell{
+				width: 98%;
+				border-top: lightgray solid 1px;
+				overflow: hidden;
+				text-align: center;
+               /* background-color:red;*/
+			}
+			.cell img{
+				float: left;
+				height: 40px;
+				padding: 10px;
+			}
+			
+			#cell_title{
+				/*background-color: red;*/
+				color: darkgray;
+				line-height: 50px;
+				padding: 10px;
+				font-size: 15px;
+				float: left;
+			}
+			.cell .cell_arrow{
+				
+				float: right;
+				height: 40px;
+				width: 20px;
+				margin-right: 0px;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+        <div class="top_log" style="background: url(../img/02.jpg) repeat-x;">
+            <div id="setting" style="background: url(../img/setting.png) repeat-x;"></div>
+            <img src="../img/13.jpg"/>
+			<div class="top_logo_name">我的昵称</div>
+		</div>
+		<div class="section ">
+			<div class="cell scell">
+                <img src="../img/icons/sales_center.png"/>
+				<span id="cell_title">
+					个人资料
+				</span>
+                <img class="cell_arrow" src="../img/icons/arrow.png" />
+			</div>
+			<div class="cell scell">
+                <img src="../img/images/money_wallet.png"/>
+				<span id="cell_title">
+					我的账户
+				</span>
+                <img class="cell_arrow" src="../img/icons/arrow.png" />
+			</div>
+		</div>	
+		<div class="section">
+			<div class="cell order">
+                <img src="../img/icons/order.png"/>
+				<span id="cell_title">
+					预约订单
+				</span>
+                <img class="cell_arrow" src="../img/icons/arrow.png" />
+			</div>
+			<div class="cell record">
+                <img src="../img/images/wait_send-.png"/>
+				<span id="cell_title">
+					充电记录
+				</span>
+                <img class="cell_arrow" src="../img/icons/arrow.png" />
+			</div>
+         
+		</div>
+        <div class="section">
+			<div class="cell map">
+                <img src="../img/icons/message_2.png"/>
+				<span id="cell_title">
+					意见反馈
+				</span>
+                <img class="cell_arrow" src="../img/icons/arrow.png" />
+			</div>
+		</div>	
+	</body>
+    <script type="text/javascript">
+		$(document).ready(function()
+		{ 
+            
+			$(".scell").click(function()
+			{ 
+                //alert($(this).index());
+                if($(this).index()==1){
+       
+                    location.href = "../html/my_account.html";
+                }else if($(this).index()==0){
+                    // alert("lal");
+                    location.href = "../html/My_msg.html";
+                }
+			});
+            
+            
+            $(".record").click(function(){
+                //alert("la");
+                  location.href = "../html/My_record.html";
+            });
+            
+            
+              $(".order").click(function(){
+                //alert("la");
+                  location.href = "../html/My_forecast_bill.html";
+            });
+            
+              
+            $(".map").click(function(){
+                //alert("la");
+                  location.href = "../html/My_feedback.html";
+            });
+		});
+	</script>
+</html>

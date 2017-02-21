@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=8">
+        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Cache-control" content="no-cache">
+        <meta http-equiv="Cache" content="no-cache">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+        <link rel="icon" href="../../img/logo.png" type="image/x-icon"/>
+		<title>我的账户</title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				background-color: rgb(245,245,245);
+			}
+			.top_total{
+			/*	width: 98%;*/
+				height: 200px;
+				margin: 0 auto;
+				text-align: center;
+				background-color: white;
+			}
+			.top_total span{
+				line-height: 100px;
+				/*background-color: blanchedalmond;*/
+				color: #299DFF;
+				font-size: 18px;
+				margin-top:100px;
+				/*background-color: blueviolet;*/
+			}
+			.top_total_btn{
+				color: white;
+				background-color: #299DFF;
+				/*outline: none;*/
+				border: none;
+				line-height: 40px;
+				width: 80px;
+				border-radius: 5px;
+			}
+			#total_record_title{
+				line-height: 50px;
+				color: gray;
+                padding:0 10px;
+			}
+			.top_total_cell{
+				/*background-color: aquamarine;*/
+				height: 50px;
+				margin: 0Px 10px 20px;
+				overflow: hidden;
+				
+			}
+			.total_cell_title{
+				float: left;
+				color: gray;
+			}
+			#total_cell_value{
+				float: right;
+				line-height: 30px;
+				color: gray;
+			}
+			.top_total_cell #total_cell_time{
+				/*background-color: blueviolet;*/
+				float: none;
+				margin-top: 30px;
+				margin-bottom: 0px;
+				color: gray;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="top_total">
+			<div><span>账户余额(元):</span>
+			<span id="wallet_value">
+				351.2
+			</span></div>
+			<button class="top_total_btn">立即充值</button>
+		</div>
+		<div id="total_record_title">
+			充值记录
+		</div>
+		<div class="top_total_cell">
+			<div class="total_cell_title">
+				支付宝充值
+			</div>
+			<span id="total_cell_value">
+				150.00
+			</span>
+			<div id="total_cell_time">
+				2016-09-25 10:25:30
+			</div>
+		</div>
+		<div class="top_total_cell">
+			<div class="total_cell_title">
+				支付宝充值
+			</div>
+			<span id="total_cell_value">
+				50.00
+			</span>
+			<div id="total_cell_time">
+				2016-09-25 10:25:30
+			</div>
+		</div>
+		<div class="top_total_cell">
+			<div class="total_cell_title">
+				支付宝充值
+			</div>
+			<span id="total_cell_value">
+				100.00
+			</span>
+			<div id="total_cell_time">
+				2016-09-25 10:25:30
+			</div>
+		</div>
+	</body>
+</html>

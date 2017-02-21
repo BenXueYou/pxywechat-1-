@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <meta http-equiv="Pragma" content="no-cache" />   
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+		<title>账单记录</title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<style type="text/css">
+			body{
+				background-color: rgb(241,241,241);
+				overflow: hidden;
+			}
+			#top{
+				width: 98%;
+				height: 50px;
+				/*text-align: center;*/
+                background-color: rgb(124,159,254);
+		
+				margin: 15px auto 1px;
+				/*overflow: hidden;*/
+				position: relative;
+			}
+			#top span{
+				color: white;
+				font-size: 20px;
+				/*vertical-align: middle;*/
+				position: absolute;
+				top: 15px;
+                /*background-color: #5F9EA0;*/
+				left: 30%;
+				display: inline;
+				
+			}
+			#main{
+				background-color: rgb(254,254,254);
+				
+				width: 98%;
+				overflow: hidden;
+				margin: 0 auto;
+				padding-top:1%;
+				font-size:20px;
+			}
+			#mainA{
+				padding: 0 2%;
+				
+			}
+			#main hr{
+				color: darkgray;
+				width: 96%;
+				/*background-color: darkgrey;*/
+               
+			}
+			#mainB{
+				font-size: 18px;
+				color: darkgrey;
+				overflow: hidden;
+				padding: 3% 2% 2% 2%;
+				
+			}
+			#left{
+                
+			}
+			
+			#right{
+				
+                /*position: relative;*/
+				/*background-color: #000000;*/
+			}
+            #r3{
+            	
+                float:left;
+            }
+			#img{
+				
+				/*background-color: #0000FF;*/
+				padding-top: 5px;
+			}
+			.assess{
+				height: 15px;
+				width: 15px;
+				margin-left: 1px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="top">
+			<span id="topTitle">2016.09.28 10:34:26</span>
+		</div>
+		<div id="main">
+			<div id="mainA">
+				<div id="m_address">杨浦区 复旦软件园</div>
+				<div id="m_cpid">10018025充电桩</div>
+			</div>
+			<hr />
+			<div id="mainB">
+				<div id="left">
+					<div>
+						<span>支付金额：</span>
+						<span id="m1">10</span>
+						<span>元</span>
+					</div>
+					<div>
+						<span>实际充电：</span>
+						<span id="m2">5.8</span>
+						<span>元</span>
+					</div>
+					<div>
+						<span>退回金额：</span>
+						<span id="m3">4.2</span>
+						<span>元</span>
+					</div>
+				</div>
+				<div id="right">
+					<div>
+						<span>充电电量：</span>
+						<span id="quantity">3.8</span>
+						<span>度</span>
+					</div>
+					<div>
+						<span>充电时长：</span>
+						<span id="time">3.8</span>
+						<span>分钟</span>
+					</div>
+					<div>
+						<span id="r3">充电评价：</span>
+						<div id='img'>
+                        	<img class="assess" src="../img/assess_select.png"/>
+                            <img class="assess" src="../img/assess_select.png"/>
+                            <img class="assess" src="../img/assess_select.png"/>
+                            <img class="assess" src="../img/assess_select.png"/>
+                            <img class="assess" src="../img/assess_select.png"/>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+    <script type="text/javascript">
+	
+	function GetRequest() {
+            
+        
+         var url = location.search;   
+         var theRequest = new Object();  
+          if (url.indexOf("?") != -1) {  
+            var str = url.substr(1);  
+            console.log("111111111"+str);  
+            var strs= new Array();     
+             strs = str.split('&');  
+//           var money = strs[0].substr(6);console.log(money);
+//           var fxurl = strs[1].substr(4).trim();console.log(fxurl);
+           console.log(strs);
+            var fee=(strs[0].substring(4)).trim();
+            var quantity=(strs[1].substring(9)).trim(); 
+            var times=(strs[2].substring(6)).trim(); 
+            var tDate=(strs[3].substring(5)).trim(); 
+              console.log(fee);
+              console.log(times);  
+              console.log(tDate);
+              console.log(quantity);
+              
+            document.getElementById("time").innerHTML = times;
+			document.getElementById("m2").innerHTML = fee;
+			document.getElementById("quantity").innerHTML = quantity;  
+              
+             
+              //alert(fee);
+              // alert(quantity);
+              // alert(times);
+ 
+      	}  
+	}  
+	GetRequest();  
+	</script>
+</html>

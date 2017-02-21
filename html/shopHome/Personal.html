@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=8">
+        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Cache-control" content="no-cache">
+        <meta http-equiv="Cache" content="no-cache">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+		<link rel="icon" href="../../../img/logo.png" type="image/x-icon"/>
+        <title>会员中心</title>
+	    <link rel="stylesheet" type="text/css" href="../../JS/swiper-3.3.1.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../../JS/m.css"/>
+        <link rel="stylesheet" type="text/css" href="../../JS/logo.css"/>
+        <script type="text/javascript" src="../../JS/swiper-3.3.1.min.js" ></script>
+        <script type="text/javascript" src="../../JS/jquery-3.0.0.min.js" ></script>
+		<style type="text/css">
+		*{padding: 0;margin: 0;}
+		.person-top{
+			width: 100%;
+			height: 200px;
+            background: url(../../../img/00.jpg) no-repeat;
+			background-origin: content-box;
+			background-clip: content-box;
+			background-size: cover;
+			position: relative;
+		}
+		.person-top_txt{
+			width:calc(100% - 20px);
+			position: absolute;
+			bottom: 0px;
+			padding: 5px 10px;
+			background-color: rgba(50,64,77,0.8);
+		}
+		.person-top_txt span{
+			color: white;
+		}
+		
+		.person_top_menu{
+			width: 96%;
+			height: 100px;
+			margin: 0 auto;
+			/*background-color: cyan;*/
+			overflow: hidden;
+			border-bottom: 1px solid lightgrey;
+			
+		}
+		.person_top_menu a{
+                
+            width:25%;
+			float: left;
+            margin:6% 0;
+                /*background-color:red;*/
+            text-align:center;
+		}
+		
+		.person_top_menu img{
+			width: 30px;
+			height: 30px;
+			background: no-repeat;
+			background-origin: content-box;
+			background-clip: content-box;
+			background-size: cover;
+		}
+		.person_top_menu p{
+			/*background-color: red;*/
+			color: gray;
+			font-size: 13px;
+            padding:5px;
+		}
+		.cell{
+			width: 98%;
+			/*background-color: burlywood;*/
+			border-bottom:1px solid lightgrey ;
+			
+			margin: 0 auto;
+			line-height: 50px;
+			overflow: hidden;
+		}
+		.cell_section{
+			border-top: 1px solid lightgrey;
+			margin:20px auto;
+		}
+		.cell_single{
+			/*background-color: red;*/
+			border-top: 1px solid lightgrey;
+		}
+		.cell img{
+			float: left;
+			width: 32px;
+			height: 32px;
+			background: no-repeat;
+			background-origin: content-box;
+			background-clip: content-box;
+			background-size: cover;
+			margin:9px 10px;
+			
+		}
+		.cell span{
+			float: left;
+			line-height: 40px;
+			padding: 5px;
+			color: gray;
+			/*background-color: red;*/
+		}
+		.cell .cell_arrow{
+			width: 20px;
+			height: 20px;
+			float: right;
+			margin:15px 10px;
+		}
+		    
+			.foot_menu{
+                
+				position: fixed;
+				z-index:1;
+				height: 45px; 
+				bottom: 0px;
+				width: 100%;
+                background-color:white;
+                border-top:1px solid lightgray;
+			}
+			.foot_menu_img{
+                
+                float: left;
+                width:30px;
+                height:30px;
+                background: white url(../../img/foot_menu_home.png) no-repeat;
+                background-origin:content-box;
+				background-clip:content-box;
+				background-size: contain;
+                margin:5px;
+                
+			}
+			.foot_menu_ul{
+				margin-left:3px ;
+				width: calc(100% - 48px);
+				float: left;
+				background-color: white;
+			}
+			.foot_menu_li{
+				background-color: white;
+				list-style-type: none;
+				float: left;
+				line-height: 50px;
+				width: 30%;
+				padding-left: 2%;
+				text-align: center;
+				border-style: none none none solid;
+				border-width:1px ;
+				border-color: lightgray; 
+				font-size: 15px;
+				position: relative;
+			}
+             .foot_menu_span{
+				position:absolute;
+				bottom:-300px;
+				left:50%;
+				width:124px;
+				margin-left:-52px;
+				height:auto;
+				text-align:center;
+				z-index:99;
+				}
+
+			.foot_menu_span a{
+				float:left;
+				width:100%;
+				height:50px;
+				line-height:50px;
+				color:#454545;
+				text-decoration:none;
+				}
+            
+			#foot_menu_btnlist{
+				/*background-color: red;*/
+				position: absolute;
+				top: 10%;
+				left: 3%;
+				/*padding-top: 5px;*/
+				/*margin: 5px 0;*/
+				
+				
+			}
+			.space{
+				 height: 50px;
+			}
+            
+           .foot{
+				/*background-color: cadetblue;*/
+                text-align:center;
+			}
+			.foot_img{
+                
+			}
+            
+            .swiper-container{
+		
+				height: 200px;
+			}
+			.swiper-slide{
+				margin:3px auto;
+				height: 200px;
+                /*  background: url(../../img/01.jpg) no-repeat;*/
+				background-origin: content-box;
+				background-clip: content-box;
+				background-size: 100% 100%;
+			}
+			.foot_btns{
+				background-color: transparent;
+			}
+			.foot_ul{
+				overflow: hidden;
+				margin: 5% auto;
+			}
+			.foot_li{
+				
+				list-style-type: none;
+				float: left;
+				width: 40%;
+				margin: 1% 4%;
+				margin-left: 6%;
+				text-align: center;
+				line-height: 40px;
+			}
+            
+			#foot_li_btn1,#foot_li_btn2{
+				background-color: #3FB7FC;
+			}
+			#foot_li_btn3,#foot_li_btn4{
+				background-color: yellow;
+			}
+			
+			.foot_menuf{
+				margin: 5% auto;
+				width: 75%;
+				/*background-color: red;*/
+				overflow: hidden;	
+			}
+			.foot_menu_btnf{
+				/*background-color: palevioletred;*/
+				display: block;
+				float: left;
+				width: 30%;
+				margin: 1% 1.5%;
+				text-align: center;
+				
+			}
+			.foot_logo{
+				display: block;
+				margin: 0 auto;
+				background-color: transparent;
+				overflow: hidden;
+				text-align: center;
+			}
+			#foot_logo_img{
+				width: 40px;
+				height: 40px;
+                background: transparent url(../../img/foot_logo.png) no-repeat;
+				background-origin: content-box;
+				background-clip: content-box;
+				background-size: cover;
+				float: left;
+				margin: 5% 0 5% 30%;
+			}
+			#foot_logo_title{
+				/*background-color: #DB7093;*/
+                display:block;
+				float: left;
+				margin: 5% 0;
+                color:gray;
+                width:50%;
+                text-align:left
+			}
+			#foot_logo_txt{
+				text-align: center;
+				margin: 0 0 5% 0;
+                color:gray;
+			}
+            #foot_hr{
+                
+                width:98%;
+                margin:0 auto;
+                color:gray;
+            }
+			
+		</style>
+	</head>
+	<body>
+		<div class="person-top">
+			<div class="person-top_txt">
+				<div class="person-top-nick"><span>最贵的&nbsp;</span><span id="person-top-nickname">七里</span></div>
+				<div class="person-top-msg"><span>你拥有本店积分：</span><span id="person-top-msgscore">100</span></div>
+			</div>	
+		</div>
+		<div class="person_top_menu">
+            <a class="menu_li"><img src="../../img/images/money_wallet.png"/><p>待付款</p></a>
+            <a class="menu_li"><img src="../../img/images/wait_send-.png"/><p>待发货</p></a>
+            <a class="menu_li"><img src="../../img/images/wait_record.png"/><p>待评价</p></a>
+            <a class="menu_li"><img src="../../img/images/reveiving.png"/><p>已完成</p></a>	
+		</div>
+        <div class="cell"><img src="../../img/icons/order.png"/><span class="cell_title">全部订单</span><img class="cell_arrow" src="../../img/icons/arrow.png"/></div>
+		<div class="cell_section">
+            <div class="cell"><img src="../../img/icons/shop_record.png"/><span class="cell_title">我的购物记录</span><img class="cell_arrow" src="../../img/icons/arrow.png"/></div>
+            <div class="cell"><img src="../../img/icons/return_cion.png"/><span class="cell_title">我的返现</span><img class="cell_arrow" src="../../img/icons/arrow.png"/></div>
+		</div>
+        <div class="cell cell_single"><img src="../../img/icons/sales_center.png"/><span class="cell_title">销售员中心</span><img class="cell_arrow" src="../../img/icons/arrow.png"/></div>
+		<div class="cell_section">
+            <div class="cell"><img src="../../img/icons/coins.png"/><span class="cell_title">我的积分</span><img class="cell_arrow" src="../../img/icons/arrow.png"/></div>
+            <div class="cell"><img src="../../img/icons/gift_box.png"/><span class="cell_title">我的礼物</span><img class="cell_arrow" src="../../img/icons/arrow.png"/></div>
+            <div class="cell"><img src="../../img/icons/coupons_.png"/><span class="cell_title">我的优惠券</span><img class="cell_arrow" src="../../img/icons/arrow.png"/></div>
+            <div class="cell"><img src="../../img/icons/coupon_code.png"/><span class="cell_title">我的优惠码</span><img class="cell_arrow" src="../../img/icons/arrow.png"/></div>
+            <div class="cell"><img src="../../img/icons/shop_bag.png"/><span class="cell_title">我的赠品</span><img class="cell_arrow" src="../../img/icons/arrow.png"/></div>
+		</div>
+        <div class="cell cell_single"><img src="../../img/icons/manger_sys.png"/><span class="cell_title">管理账号</span><img class="cell_arrow" src="../../img/icons/arrow.png"/></div>
+		
+		
+		
+          <div class="foot">
+			
+            	<div class="swiper-container">
+                 <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image: url(../../../img/01.jpg);"></div>
+                    <div class="swiper-slide" style="background-image: url(../../../img/02.jpg);"></div>
+                    <div class="swiper-slide" style="background-image: url(../../../img/03.jpg);"></div>
+                    <div class="swiper-slide" style="background-image: url(../../../img/04.jpg);"></div>
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination"></div>
+                <!-- 如果需要滚动条 -->
+                <div class="swiper-scrollbar"></div>  
+           	 </div>     
+            
+			<div class="foot_btns">
+				<ul class="foot_ul">
+					<li class="foot_li" ><div class="foot_li_btn" id="foot_li_btn1">
+						交流桩系列
+					</div></li>
+					<li class="foot_li" ><div class="foot_li_btn" id="foot_li_btn2">
+						直流桩系列
+					</div></li>
+					<li class="foot_li" ><div class="foot_li_btn" id="foot_li_btn3">
+						充电枪系列
+					</div></li>
+                    <li class="foot_li" ><div class="foot_li_btn" id="foot_li_btn4">
+						新能源周边
+					</div></li>
+				</ul>
+				<div class="foot_menuf">
+					<div class="foot_menu_btnf" id="foot_menu_btn1">
+						店铺主页
+					</div>
+					<div class="foot_menu_btnf" id="foot_menu_btn2">
+						会员中心
+					</div>
+					<div class="foot_menu_btnf" id="foot_menu_btn3">
+						关注我们
+					</div>
+				</div>
+			</div>
+		</div>
+        <hr id="foot_hr" />
+		<div class="foot_logo">
+			<div id="foot_logo_img">
+               
+			</div>
+			<div id="foot_logo_title">
+				上海绿充<br>
+			</div>
+			
+		</div>
+		<div id="foot_logo_txt">上海绿充提供技术支持</div>
+           
+        <div class="space"></div>
+	
+        <div class="foot_menu">
+            <div class="foot_menu_img"></div>
+			<ul class="foot_menu_ul">
+				<li class="foot_menu_li">
+                    <span id="foot_menu_btnlist"><img src="../../img/list.png">
+					</span>
+					<span class="foot_menu_btn">
+						全部商品
+					</span>
+					<span class="foot_menu_span" style="background-size:100%;">
+                      
+                          <img src="../../img/images/navbg4.png" width=100%>
+					<div style="position:absolute;top:0px;left:0px;">
+						<a href="shopHome_sub.html">交流充电桩系列</a>
+						<a href="shopHome_sub.html">直流充电桩系列</a>
+						<a href="shopHome_sub.html">充电枪系列</a>
+						<a href="shopHome_sub.html">新能源周边</a>						
+					</div>
+					</span>
+				</li>
+				<li class="foot_menu_li">
+					<span class="foot_menu_btn" >
+						订购车
+					</span>
+				</li>
+				<li class="foot_menu_li">
+					<span class="foot_menu_btn" id="myBill">
+						我的订单
+					</span>
+				</li>
+			</ul>
+		</div>
+            
+	</body>
+    <script>
+		$(document).ready(function () {
+		  var mySwiper = new Swiper ('.swiper-container', {
+			    direction: 'horizontal',
+			    loop: true,
+			    
+			    autoplay : 3000,
+				speed:300,
+			    
+			    // 如果需要分页器
+			    pagination: '.swiper-pagination',
+			    
+//			    // 如果需要滚动条
+//			    scrollbar: '.swiper-scrollbar',
+			  })
+		  })
+        
+       $('.foot_menu_li').each(function(i){
+
+            $(this).click(function(){
+               if($(this).attr("tag")!="on"){
+                    if(i == 0){
+                            //alert("展开"+i);
+                            //alert($(this).attr("tag"));
+                        $('.foot_menu_span').animate({bottom:-$('.foot_menu_span').height()},200);
+                        $('.foot_ul .on').attr("tag","off");
+                        $(this).attr("tag","on");
+                        $('.foot_menu_span').eq(i).animate({bottom:35},200);
+                    
+                    }else{	
+                            $('.foot_menu_span').eq(0).animate({
+                                bottom:-$('.foot_menu_span').eq(0).height()
+                            },200);
+                            $(this).attr("tag","off");
+                            if(i == 1){
+                                alert("点击了购物车");
+                                location.href = "../shopHome/shopCar.html";
+                            }else if(i == 2){
+                               
+                                
+                                myView();
+                            }
+                            
+                        }
+                }else{
+                        //alert($(this).attr("tag"));
+                        //	alert("隐藏"+i);
+                        
+                        $('.foot_menu_span').eq(i).animate({
+                            bottom:-$('.foot_menu_span').eq(i).height()
+                        },200);
+                    
+                        $(this).attr("tag","off");
+                        //alert($(this).attr("tag"));
+                    }           
+            });
+        
+        });
+        
+		function top_btnFun(arg){
+            
+			alert("点击了按钮");
+            
+            if(arg == "top_btn1"){
+                location.href = "../shopHome/shopHome_sub.html";
+                
+            }else if(arg == "top_btn2"){
+                  location.href = "../shopHome/shopHome_sub.html";
+            
+            }else if(arg == "top_btn3"){
+                  location.href = "../shopHome/shopHome_sub.html";
+                
+            }else{
+                  location.href = "../shopHome/shopHome_sub.html";
+                
+            }
+            
+		}
+		function middle_btnFun(){
+			alert("点击了加载更多")
+		}
+        
+        function myView(){
+		$(function () {
+            H_login = {};
+            H_login.openLogin = function(){
+              
+                    $('.login').show();
+                    $('.login-bg').show();
+              
+            };
+            H_login.closeLogin = function(){
+                $('.close-login').click(function(){
+                    $('.login').hide();
+                    $('.login-bg').hide();
+                });
+            };
+            H_login.loginForm = function () {
+                $("#login-button-submit").on('click',function(){
+                      var username = $("#username");
+                      var usernameValue = $("#username").val();
+                      var password = $("#password");
+                      var passwordValue = $("#password").val();
+                    
+                    location.href = "../shopHome/Personal.html"
+                    /*  if(usernameValue == ""){
+                        alert("用户名不能为空");
+                        username.focus();
+                        return false;
+                    }else if(usernameValue.length > 15){
+                        alert("用户名长度不能大于15字符");
+                        username.focus();
+                        return false;
+                    }else if(passwordValue == ""){
+                        alert("密码不能为空");
+                        password.focus();
+                        return false;
+                    }else if(passwordValue.length < 6 || passwordValue.length > 30){
+                        alert("密码长度不能小于6或大于30位字符");
+                        password.focus();
+                        return false;
+                    }else{
+                        alert("登录成功");
+                        setTimeout(function(){
+                            $('.login').hide();
+                            $('.login-bg').hide();
+                            $('.list-input').val('');
+                        },2000);
+                    }*/
+                });
+            };
+            H_login.run = function () {
+                this.closeLogin();
+                this.openLogin();
+                this.loginForm();
+            };
+            H_login.run();
+        });
+	}
+        
+        $(".click_li").click(function(){
+			
+			location.href = "../shopHome/shopHome_sub.html";
+		
+	});
+        
+	</script>
+</html>

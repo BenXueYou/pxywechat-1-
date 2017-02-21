@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>视频播放</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.71/jquery.min.js"></script>
+        
+		<style type="text/css">
+			body{
+                text-align:center;
+                width:100%;
+                text-align:center;
+				background-color: #000000;
+			}
+		</style>
+	</head>
+	<body>
+	<section id="wrapper">
+
+		<div class="videoContainer">
+			
+			<video id="myVideo" controls width="98%" height="350" >
+				  <!--<source src="http://demo.inwebson.com/html5-video/iceage4.mp4" type="video/mp4"></source>
+				  <source src="http://demo.inwebson.com/html5-video/iceage4.webm" type="video/webM"></source>
+				  <source src="http://demo.inwebson.com/html5-video/iceage4.ogv" type="video/ogg"></source>-->
+                <source src="../sources/video_01.mp4" type="video/mp4"/>
+				
+				  <!--<p>Your browser does not support the video tag.</p>-->
+			</video>
+			<div class="caption">This is HTML5 video with custom controls</div>
+			<div class="control">
+					<div class="topControl">
+						<div class="progress">
+							<span class="bufferBar"></span>
+							<span class="timeBar"></span>
+						</div>
+						<div class="time">
+							<span class="current"></span> / 
+							<span class="duration"></span> 
+						</div>
+					</div>
+				</div>
+		</div>	
+	</section>
+</body>
+	<script type="text/javascript">
+		$(document).ready(function() {
+		$('.control').hide();
+		$('.loading').fadeOut(500);
+		$('.caption').fadeOut(500);
+	});
+</script>
+</html>

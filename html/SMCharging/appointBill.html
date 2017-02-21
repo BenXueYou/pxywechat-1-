@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=8">
+        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Cache-control" content="no-cache">
+        <meta http-equiv="Cache" content="no-cache">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+        <link rel="icon" href="../../../img/logo.png" type="image/x-icon"/>  
+		<title>预约账单</title>
+        <script type="text/javascript" src="../../JS/jquery-3.0.0.min.js" ></script>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+                font-size:15px;
+			}
+			.top_title{
+				text-align: left;
+				padding:5px;
+			}
+			.top_title span{
+				line-height: 30px;
+                font-size:16px;
+                margin:0 10px 20px 0
+			}
+			.top_title input{
+				line-height: 30px;
+				width: 90%;
+				outline: none;
+                border:1px solid lightgray; 
+				/*font-size: 14px;*/
+				margin: 0 5%;
+			}
+			.middle_text{
+				width: 96%;
+				margin: 0 auto;
+				
+				text-align: center;
+			}
+			.middle_text input{
+				width: 40%;
+				height: 40px;
+				line-height: 40px;
+				padding: 0 5px;
+				border: 1px solid lightgray;
+				border-radius: 5px;
+				margin:5px 1.5%;
+				background-color: white;
+			}
+			.middle_text .active{
+				color: orange;
+				border: 1px solid orange;
+			}
+			#middle_text_input{
+				display: none;
+				background-color:white ;
+				color: black;
+				margin-bottom: 15px;
+				padding:15px;
+			}
+			
+			#middleDetail input{
+				width: 80%;
+				margin: 10px 10%;
+				line-height: 25px;
+			}
+			.foot{
+				width: 90%;
+				margin: 5px auto;
+				border-top: 1px solid lightgray;
+				padding: 10px;
+                margin-bottom:20px;
+			}
+			.foot p{
+				color: orange;
+				font-size: 14px;
+                line-height:20px;
+			}
+			.pay_bill{
+				text-align: center;
+			}
+			.pay_btn{
+				width: 20%;
+				line-height: 30px;
+				margin: 20px 40%;
+				border-radius: 5px;
+				outline: none;
+				background-color: white;
+				border: 1px solid lightgrey; 
+			}
+            h3{
+                font-size:18px;
+                margin-top:20px;
+                line-height:30px;
+              
+                
+            }
+		</style>
+	</head>
+	<body>
+		<div class="top_title">
+			<h3>充电站</h3>
+			<span>地址：</span><input type="text" name="" id="" value="上海市杨浦区长阳路1080号国际设计交流中心" />
+		</div>
+		<div class="top_title">
+			<span>桩号：</span>
+			<input type="text" name="" name="" class="" value="009"/>
+		</div>
+		
+		<div class="middle_text">
+			<input type="submit" name="" id="" value="30分钟后到达" />
+			<input type="submit" name="" id="" value="1小时后到达" />
+			<input type="submit" name="" id="" value="3小时后到达" />
+			<input type="submit" name="" id="" value="自定义" />
+		</div>
+		 <div id="middle_text_input">
+			<p id="middleTitle">自定义时间</p>
+			<span id="middleDetail"><input placeholder="请输入时间/例如17：30" id="middle_input"></span>
+		</div>
+		 
+		<div class="foot">
+			<p>预约充电按不同时段电价计费,预约之前需付押金30元</p>
+			<p>预约时间段电价为当前电压1.2倍，预约充电时间段电价按当前电价计算</p>
+			<p>预约时间段内未赶到充电站，电价依照账单收取，剩余押金退回支付账户</p>
+		</div>
+		
+		<div class="pay_bill">你应付预约金（元）：<span>15.0</span></div>
+		<button class="pay_btn">确认支付</button>
+	</body>
+	<script>
+		 $(".middle_text input").on("click",function(){
+			$(this).addClass("active").siblings().removeClass("active");
+              var sbtitle=document.getElementById("middle_text_input");
+//				$(this).getElementById("middle").show();
+				if($(this).index() == "3"){
+					//alert($(this).index());
+					
+	     			if(sbtitle){
+	       				if(sbtitle.style.display=='block'){
+	        				
+	      			 	}else{
+	         				sbtitle.style.display='block';	
+	       				}
+					}
+                }else{
+                    sbtitle.style.display='none';
+                }
+                index = $(this).index();
+      			
+			})
+	</script>
+</html>

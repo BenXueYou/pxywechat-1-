@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <meta http-equiv="Pragma" content="no-cache" />   
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+		<title>正在充电</title>
+        <script type="text/javascript" src="../../JS/jquery-3.0.0.js" ></script>
+        <script type="text/javascript" src="../../JS/jquery-3.0.0.min.js" ></script>
+        <script type="text/javascript" src="../../JS/jquery-3.0.0.min.js" ></script>
+        <script type="text/javascript" src="../../JS/radialIndicator.js" ></script>
+		<style type="text/css">
+			body{background-color: rgb(245,245,245);}
+			#top{
+				margin: 0 auto;
+				width: 250px;
+				height: 200px;
+               
+			}
+			 .rad-prg{
+                text-align:center;
+                position: relative;
+            }
+            .rad-con{
+                
+                position: absolute;
+                z-index: 1;
+                top:0;
+                left: 15%;
+                text-align: center;
+                width:150px;
+                height: 150px;
+                padding: 10px;
+                font-family: "microsoft yahei";
+            }
+            .rad-con p{
+                
+                
+                position:absolute;
+                top:30%;
+                left:30%;
+            }
+            #top #label div{
+				/*background-color:red ;*/
+				text-align: center;
+				position: absolute;
+				width: 90%;
+				bottom: 10px;
+				left: 5%;
+			}
+			span{
+				 font-size: 20px;
+				color: black;
+				font: '微软雅黑'; 
+				
+			}
+			
+			#mid{
+                width: 100%;
+				margin-top: 5%;
+				background-color:rgb(254,254,254) ;
+				text-align: center;
+				overflow: hidden;
+                border: 1px solid lightgray;;
+			}
+			.ch{
+				width: 80%;
+				float: left;
+				margin-left: 10%;
+                overflow: hidden;
+           
+                position:relative;
+				/*padding: 5%;*/
+			}
+			.ch span{
+				display: block;
+				float: left;
+				
+				margin-left: 0.1%;
+				margin-top: 5%;
+				font-size: 18px;
+				
+			}
+            .ch_span{
+                float:right;
+                position:absolute;
+                right:10%;
+                font-size:14px;
+                 
+            }
+            #date{
+              
+                margin-left:5%;
+                font-size:16px;
+                 
+            }
+			#bot{
+				text-align: center;
+				margin-top: 5%;
+				
+			}
+			#stop{
+				padding: 0px 5%;
+				width: 68%;
+				height: 50px;
+				border-radius: 5px;
+				background-color:lightgreen;
+                color:white;
+                font-size:20px
+			}
+			#refresh{
+				padding: 0px 5%;
+				width: 28%;
+				height: 50px;
+				border-radius: 5px;
+				background-color:rgb(106,142,244) ;
+				margin-left:2% ;
+                color:white;
+                font-size:20px
+			}
+		</style>
+	</head>
+	<body>
+		<div id="top">
+			<div class="prg-cont rad-prg" id="indicatorContainer">
+               <div class="rad-con">
+                 <p>正在充电</p>
+               </div>
+		    </div>
+        </div>
+		<div id="mid">
+			<span id="title">
+               <div class="ch" ><span>充电桩编号：</span><span id="cpid">3100100703</span></div>
+               <div class="ch" ><span>充电计时：</span><span id="time">11.00</span></div>
+			   <div class="ch" ><span>已充金额（元）：</span><span id="fee">4.60</span></div>
+			   <div class="ch" ><span>已充电量（度）：</span><span id="quantity">0.67</span></div>
+		       <div class="ch" >
+                   
+                   <span>当前三相电压（伏）：</span>
+
+                    <span class="ch_A">A相</span>
+                    <span class="ch_A">B相</span>
+                    <span class="ch_A">C相</span>
+                 
+                   <span id="V">221.60</span>
+                   <span id="V1">221.60</span> 
+                   <span id="V2">221.60</span>
+                 
+                </div>
+			   <div class="ch" >
+                   <span>当前三相电流（安）：</span>
+                   <span id="A">15.37</span>
+                   <span id="A1">15.37</span>
+                   <span id="A2">15.37</span>
+                 
+                </div>
+               <div class="ch" >
+                   <span>当前时间：</span>
+                   <span id="date">--.--.-- --:--</span>
+               </div>
+			</span>
+		</div>
+		<div id="bot">
+			<button id="stop" onclick="stopCount()"> 停止充电</button>
+			<button id="refresh" onclick="refreshCount()">刷新</button>
+		</div>
+	</body>
+	<script type="text/javascript">
+        
+        
+        //获取跳转传参
+         var cpid;
+        function GetRequest() {
+            
+            //alert("hello world");
+          var url = location.search;   
+          var theRequest = new Object();  
+          if (url.indexOf("?") != -1) {  
+            var str = url.substr(1);  
+            console.log("111111111"+str); 
+              // alert("111111111"+str);
+            var strs= new Array();     
+             strs = str.split('&');  
+
+             cpid=strs[0].substring(5).trim();  
+
+              // alert("参数cpid"+cpid);
+      	}  
+	}  
+        GetRequest();  
+        
+        
+       $('#indicatorContainer').radialIndicator({
+                barColor: '#007aff',
+                barWidth: 5,
+                initValue: 0,
+                roundCorner : false,
+                percentage: true,
+                displayNumber: false,
+                radius: 70
+           });
+        
+        //动画
+             function sCharging(val){
+                 var radObj = $('#indicatorContainer').data('radialIndicator');
+                 radObj.animate(100);  
+            }
+        
+                var c = 0.01;
+                var t;
+                var timer_is_on = 0;
+                var myDate = new Date();
+                var begin_time = myDate.getTime();     //获取当前秒数(0-59)
+                
+        startCount();//开始充电计时
+        
+                function timedCount() {
+                    document.getElementById("time").innerHTML = c.toFixed(2);
+                    c = (c *60 + 25)/60.0;
+                    getdata();//请求刷新数据
+                    t = setTimeout(function(){ timedCount() }, 25000);
+                }
+                
+                function startCount() {
+                    
+                    if (!timer_is_on) {
+                        timer_is_on = 1; 
+                        timedCount();
+                        setTimeout(sCharging(300),300);
+                    }
+                    
+                }
+                
+        //结束充电的方法
+		function stopCount() {
+            
+
+		    clearTimeout(t);
+		    timer_is_on = 0;
+           	ajax.abort();
+            
+            var times = document.getElementById("time").innerHTML;
+            var v = document.getElementById("V").innerHTML;
+			var a = document.getElementById("A").innerHTML;
+			var fee = document.getElementById("fee").innerHTML;
+			var quantity = document.getElementById("quantity").innerHTML;
+            // document.getElementById("date").innerHTML = obj.currDate;
+            
+//		    location.href="../html/check.html"
+
+			console.log(v);console.log(a);console.log(fee);console.log(quantity);
+            
+            
+            
+           x=confirm( "是否确定结束充电?");
+            
+            if(x == true){
+            
+            	location.href='../html/checkBill.html?v='+v+'&a='+a+'&fee='+fee+'&quantity='+quantity+'&times='+times; 
+                
+            }
+            
+            //location.href = "../html/checkBill.html";
+		}
+		
+        //刷新计时的方法
+		function refreshCount(){
+            //alert("开始刷新" + cpid);
+            getdata();
+			 var refreshDate = new Date();
+		     var refresh_time = refreshDate.getTime();
+		     c = (refresh_time - begin_time)/1000;
+		     c = c/60;
+		     console.log(refresh_time);
+		     console.log(begin_time);
+		     console.log(c);
+		    document.getElementById("time").innerHTML = c.toFixed(2);
+		    
+		}
+        
+        //网络请求ajax
+//		$(document).ready(function(){
+		function getdata(){
+			ajax = $.ajax({
+				type: "GET", // 请求方式
+				url: "http://116.236.237.244:8080/ServerForUser/scanCharge/getChargeData", // 请求地址
+				dataType:'json',  
+//      			jsonp:'callback', 
+				data:{
+					cpId:cpid,
+					beginTime:"2016-09-22 14:03:40"
+                    
+				},
+				success: function(data) { //data就是返回的json数据
+                    //alert("请求成功")
+					console.log("data"+data);
+					console.log("detail"+ data.detail);
+					
+					if(data.detail != null) {
+						var array = data.detail;
+					    var obj = array[0];
+                        
+                        console.log("请求返回的数据"+obj);
+				
+                        //console.log(document.getElementById("A"));
+						//document.getElementById("A").value = "00000";
+						//console.log(document.getElementById("A").value);
+//						$("#time").val("435345");
+//						$("#V").text("dfgasdfa");
+					
+						document.getElementById("V").innerHTML = obj.currentavol;
+						document.getElementById("A").innerHTML = obj.currentacur;
+						document.getElementById("fee").innerHTML = obj.currfee;
+						document.getElementById("quantity").innerHTML = obj.currquantity;
+                        //document.getElementById("date").innerHTML = obj.currDate;
+                        var ts = new Date();
+                        var td = ts.getDate();//day
+                        var ty = ts.getFullYear();//
+                        var tm = ts.getMonth() + 1;
+                        var th = ts.getHours();
+                        var tmin = ts.getMinutes();
+                        var tsd = ts.getSeconds();
+                        var dtime = ty+"-"+(tm<10 ? "0" + tm : tm)+"-"+(td<10 ? "0"+ td : td)+" "+(th<10 ? "0"+ th : th)+":"+(tmin<10 ? "0" + tmin : tmin)+":"+(tsd<10 ? "0" +tsd : tsd);
+				
+						document.getElementById("date").innerHTML = dtime;
+						
+					} else {
+						alert("充电桩故障");
+                         stopCount();
+                        location.href = "../html/charging.html";
+                        
+					}
+				},
+				error: function(jqXHR) {
+                    
+                    // location.href = "../html/checkBill.html";   
+                    //alert("发生错误："+ jqXHR.status);
+                    // location.href = "../html/charging.html";
+        },
+       });	
+      }
+//		});	
+        
+        
+       
+	</script>
+	
+</html>

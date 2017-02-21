@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=8">
+        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Cache-control" content="no-cache">
+        <meta http-equiv="Cache" content="no-cache">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+		<title>预约订单</title>
+		<script type="text/javascript" src="../JS/jquery-3.0.0.min.js" ></script>
+	</head>
+	<style type="text/css">
+		*{
+				padding: 0;
+				margin: 0;
+                font-size:15px;
+			}
+            ul{
+                width:98%;
+            	border-top: 1px solid lightgray;
+            }
+            span{
+                font-size:16px;
+            }
+			.top_menu{
+                margin:10px auto;
+				height: 50px;
+				border-bottom: 1px solid lightgray;
+			}
+			.top_menu ul{
+				
+				width: 80%;
+				overflow: hidden;
+				margin: 0 auto;
+				/*border-radius: 5px;*/
+				
+				/*background-color: blue;*/
+			}
+			.top_menu li{
+				list-style-type: none;
+				float: left;
+				width: 49%;
+				text-align: center;
+				line-height: 40px;
+				border-radius: 5px;
+			/*	margin-right: 2px;*/
+				border: 1px solid lightgray;
+				/*background-color: red;*/
+			}
+			input{
+				height: 25px;
+                margin:0px 5px;
+                border:1px solid lightgrey;
+                outline: none;
+			}
+			.top_menu .active{
+				color: orange;
+				border: 1px solid orange;
+			}
+				.menu1 .lf_menu{
+				width: 98%;
+				margin: 10px auto;
+                
+				border-bottom: 1px solid lightgray;
+				height: 50px;
+				line-height: 50px;
+                font-size:18px;
+			}
+            .menu1 button{
+                width:50px;
+                height:30px;
+                border-radius:5px;
+            }
+           
+			.lf_li{
+				/*background-color: cadetblue;*/
+				list-style-type: none;
+				border-bottom:1px solid lightgray;
+				overflow: hidden;
+				padding: 10px;
+			}
+			.lf_li img{
+				width: 45px;
+				height: 50px;
+				float: left;
+			}
+			.lf_li div{
+                /*background-color: red;*/
+				float: left;
+				width:calc(100% - 130px);
+				line-height: 30px;
+				margin-left: 20px;
+			}
+            .lf_li div .datetime{
+                width:120px;
+                float:right;
+                
+            }
+			.lf_li span{
+				width: 50px;
+				float: right;
+				line-height: 30px;
+				border: 1px solid orange;
+				font-size: 14px;
+				padding:2px 5px;
+				border-radius: 5px;
+                color:orange;
+			}
+		.menu2 .main{
+			display: none;
+		}
+		
+            .top_title{
+                
+                margin-left:30px;
+            }
+            .main_input{
+                margin:10px 15%;
+                width:50px;
+                height:30px;
+                border-radius:5px;
+            }
+            .pay_btn{
+                width:30%;
+                height:30px;
+                margin:10px 8% 10px 10%;
+            }
+	</style>
+	<body>
+		<div class="top_menu">
+			<ul>
+				<li class="active" id="leftBtn">待处理订单</li>
+				<li id="rightBtn">已完成订单</li>
+			</ul>
+		</div>
+		
+			<div class="menu1">
+			
+			<ul>
+				<li class="lf_li"><img src="../img/scan_charging_img.png"/><div id="lf_li_ad1">
+				上海市杨浦区长阳路1080号	
+				</div><div id="lf_li_cpid1">
+				009号<div class="datetime">
+					2016年10月21日
+				</div>			
+				</div><span id="lf_li_state1">
+					未支付
+				</span></li>
+				
+               
+			</ul>
+		</div>
+		<div class="menu2">
+			<div class="main">
+             <ul>
+				<li class="lf_li"><img src="../img/scan_charging_img.png"/><div id="lf_li_ad1">
+				上海市杨浦区长阳路1080号	
+				</div><div id="lf_li_cpid1">
+				009号<div class="datetime">
+					2016年10月21日
+				</div>			
+				</div><span id="lf_li_state1">
+					已完成
+				</span></li>
+				
+                <li class="lf_li"><img src="../img/scan_charging_img.png"/><div id="lf_li_ad1">
+				上海市杨浦区长阳路1080号	
+				</div><div id="lf_li_cpid1">
+                    009号<div class="datetime">
+					2016年10月21日
+				</div>	
+				</div><span id="lf_li_state1">
+					已完成
+				</span></li>
+				 <li class="lf_li"><img src="../img/scan_charging_img.png"/><div id="lf_li_ad1">
+				上海市杨浦区长阳路1080号	
+				</div><div id="lf_li_cpid1">
+                    009号<div class="datetime">
+					2016年10月21日
+				</div>	
+				</div><span id="lf_li_state1">
+					已完成
+				</span></li>
+				
+                <li class="lf_li"><img src="../img/scan_charging_img.png"/><div id="lf_li_ad1">
+				上海市杨浦区长阳路1080号	
+				</div><div id="lf_li_cpid1">
+				009号<div class="datetime">
+					2016年10月21日
+				</div>			
+				</div><span id="lf_li_state1">
+					已完成
+				</span></li>
+				
+                <li class="lf_li"><img src="../img/scan_charging_img.png"/><div id="lf_li_ad1">
+				上海市杨浦区长阳路1080号	
+				</div><div id="lf_li_cpid1">
+				009号<div class="datetime">
+					2016年10月21日
+				</div>			
+				</div><span id="lf_li_state1">
+					已完成
+				</span></li>
+			</ul>   
+		
+		</div>
+		
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(".top_menu li").click(function(){
+				$(this).addClass("active").siblings().removeClass("active");
+				
+				var index = $(this).index();
+				if(index==0){
+					$(".menu2 .main").hide();
+					$(".menu1").show();
+				}else{
+					$(".menu1").hide();
+					$(".menu2 .main").show();
+				}
+			});
+	</script>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=8">
+        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Cache-control" content="no-cache">
+        <meta http-equiv="Cache" content="no-cache">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>        
+		<title>实时支付</title>
+        <script type="text/javascript" src="../JS/jquery-3.0.0.js" ></script>
+        <script type="text/javascript" src="../JS/jquery-3.0.0.min.js" ></script>
+        
+		<style type="text/css">
+			*{padding: 0;margin: 0;}
+			body{
+				background-color:#D3D3D3;
+			}
+			.top,.top_menu{
+				background-color:white ;
+				color: black;
+				padding:10px 10px 15px;
+				margin:15px 5px;
+			}
+			.middle{
+				display: none;
+				background-color:white ;
+				color: black;
+				margin:15px 5px;
+				padding:5px 15px  20px;
+			}
+			.money button,.top_menu button{
+                margin: 10px 0%;
+				width: 23%;
+				height: 30px;
+				background-color: white;
+				border: 1px solid lightgrey;
+			}
+			
+			.middleDetail{
+				width: 30px;
+				margin: 10px 20%;
+			}
+			#pointOut{
+				color: darkorange;
+				padding: 15px;
+			}
+			#bottom{
+				
+				width: 50%;
+				height: 50px;
+				margin:0 20%;
+				background-color: orange;
+				font-size:20px ;
+				color: white;
+			}
+			.money .active{color: orange;border: 1px solid orange;background-color: white;}
+			
+			.middie_menu li{
+				list-style-type: none;
+			}
+			.money_input{
+				/*background-color: red;*/
+				margin: 10px;
+				text-align: center;
+			}
+			.money_input input{
+				width: 50%;
+				/*background-color: blue;*/
+				margin: 5px;
+				text-align: center;
+				line-height: 20px;
+			}
+			.hidden{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="top_menu">
+			<p class="topTitle">请选择充电方式</p>
+			<div class="money">
+				<button class="menu_btn active">按金额充电</button>
+				<button class="menu_btn">按时间充电</button>
+				<button class="menu_btn">按电量充电</button>
+				<button class="menu_btn" value="4">自动充满</button>
+			</div>
+		</div>
+		<div class="middie_menu">
+			<ul>
+				<li><div class="top" id="chagerWay1">
+				<p class="topTitle">请选择金额</p>
+				  <div class="money">
+					<button class="btn">10元</button>
+					<button class="btn">20元</button>
+					<button class="btn">30元</button>
+					<button class="btn" value="4">自定义</button>
+				  </div>
+				</div></li>
+				
+				
+				<li><div class="top hidden" id="chagerWay2">
+				<p class="topTitle">请时间电量</p>
+				  <div class="money">
+					<button class="btn">0.5小时</button>
+					<button class="btn">1小时</button>
+					<button class="btn">1.5小时</button>
+					<button class="btn" value="4">自定义</button>
+				  </div>
+				</div></li>
+				
+				
+				<li><div class="top hidden" id="chagerWay3">
+				<p class="topTitle">请选择电量</p>
+				  <div class="money">
+					<button class="btn">10度</button>
+					<button class="btn">20度</button>
+					<button class="btn">30度</button>
+					<button class="btn" value="4">自定义</button>
+				  </div>
+				</div></li>
+				
+				
+				<li><div class="top hidden" id="chagerWay4">
+				<p class="topTitle">请输入账号/充电卡号</p>
+				  <div class="money_input">
+				  	<span>账号：</span><input type="" name="" id="" value="" />
+				  	<br />
+				  	<span>密码：</span><input type="" name="" id="" value="" />
+				  </div>
+				</div></li>
+			</ul>
+		</div>
+		<div class="middle">
+			<p class="middleTitle">自定义金额</p>
+			<span class="middleDetail"><input placeholder="请输入" id="middle_input"><span id="middle_input_span">元</span></span>
+		</div>
+		<p id="pointOut">如电量已充满或者其他意外情而停止充电，导致充电未完成系统会自动退回剩余充电金额到您的支付账户。</p>
+		<button id="bottom">确定</button>
+	</body>
+	<script type="text/javascript">
+	
+		$(document).ready(function()
+		{ 
+			var index;
+			var money;
+			var chargeWayIndex;
+            
+            //点击确定按钮
+            
+			$("#bottom").click(function()
+			{ 
+			
+				
+                
+               		//alert(money);
+				if(index >= 0 && chargeWayIndex==0){
+					var mesg = "你选择的充电金额为:"+money+"元";
+                  
+					location.href = "../html/logo.html?money="+money;
+				}else{
+					alert("你还未选择充电金额！");				
+				}
+                
+                
+                
+                
+                
+                
+                
+                
+                
+			});
+            
+            
+            //确定充电方式以及参数
+            
+            function getBillArg(e){
+            
+                if(e==1){
+                
+                    switch(chargeWayIndex){
+                    	
+                        case 0:
+                             
+                            break;
+                        case 1:
+                            money = "0.5";
+                            break;
+                        case 2：
+                    }
+                }
+            
+            
+            
+            
+            }
+            
+            
+            
+            
+            
+            
+			
+            //点击中间的菜单
+            
+		   $(".btn").on("click",function(){
+			$(this).addClass("active").siblings().removeClass("active");
+              var sbtitle=$(".middle");
+				if($(this).index() == "3"){
+
+	     			if(sbtitle.length){
+	       				sbtitle.show();	
+					}
+               }else{
+                    sbtitle.hide();
+                }
+                index = $(this).index();
+			});
+		});
+		
+        //点击上面的方式菜单
+		 $(".menu_btn").on("click",function(){
+		 	
+			$(this).addClass("active").siblings().removeClass("active");
+			
+              var sbtitle=$(".top");
+               chargeWayIndex  = $(this).index();
+//             alert(chargeWayIndex);
+               showtopmenu(chargeWayIndex);
+			});
+		
+        //点击菜单响应方法
+		function showtopmenu(i){
+			
+				$(".top").hide();
+				$(".middle").hide();
+				$(".btn").removeClass("active");
+				switch(i){
+					case 0:
+						//alert("电量");
+						var visible = $("#chagerWay1");
+						visible.show();
+						
+//						document.getElementsByClassName("middleTitle").innerHTML = "自定义充电金额";
+						$(".middleTitle").html("自定义充电金额");
+						$("#middle_input_span").html("元");
+						break;
+                        
+					case 1:
+					//alert("时间");
+//					$("middleTitle").innerText="自定义充电时长";
+						var visible = $("#chagerWay2");
+						visible.show();
+//						document.getElementsByClassName("middleTitle").val = "自定义充电时长";
+						
+            			$(".middleTitle").html("自定义充电时长");
+            			$("#middle_input_span").html("小时");
+						break;
+                        
+					case 2:
+						//alert("电量");
+						var visible = $("#chagerWay3");
+						visible.show();
+//						document.getElementsByClassName("middleTitle").innerHTML = "自定义充电电量";
+						$(".middleTitle").html("自定义充电电量"); 
+						$("#middle_input_span").html("度");
+						break;
+                        
+					default:
+						//alert("充满");
+						var visible = $("#chagerWay4");
+						visible.show();
+						var sbtitle=$(".middle");
+						sbtitle.hide();
+						break;
+			}
+		}
+	</script>
+</html>

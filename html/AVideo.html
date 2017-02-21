@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=8">
+        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Cache-control" content="no-cache">
+        <meta http-equiv="Cache" content="no-cache">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+		<title>视频</title>
+        <script type="text/javascript" src="../JS/jquery-3.0.0.js" ></script>
+		<script type="text/javascript" src="../JS/jquery-3.0.0.min.js" ></script>
+		<style>
+		*{
+			margin: 0;padding: 0;
+		}
+			.base{
+				background: rgb(224,224,224);
+				width: 98%;
+				height: 100%;
+			}
+			.v_li{
+				
+				margin: 0 1%;
+				background-color: white;
+				overflow: hidden;
+				list-style-type: none;
+			}
+			.v_img{
+				margin: 1%;
+				float: left;
+			}
+			.v_txt{
+				display: inline;
+				/*background-color: green;*/
+				float: left;
+				width: 50%;
+				margin: 2% 0;
+			}
+			.v_txt span{
+				
+				/*background-color: purple;*/
+				display: block;
+				margin:1% 0;
+				/*padding:1%;*/
+			}
+			.sv_title{
+				font-size: 16px;
+			}
+			.sv_detailtxt{
+				font-size: 14px;
+				text-overflow:ellipsis;
+			}
+			
+			hr{
+				width: 96%;
+				margin: 0 auto;
+				color: gray;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="base">
+			<ul>
+				<li><div class="v_li">
+						<img class="v_img" src="../img/video/v_01.jpg"/>
+						<div class="v_txt" id="a">
+							<span class="sv_title">嘻哈风，披头士</span>
+							<span class="sv_detailtxt">再见我的天空，want to say goodbye</span>
+						</div>
+				</div></li>
+				<hr />
+				<li><div class="v_li">
+					<img  class="v_img" src="../img/video/v_02.jpg"/>
+					<div class="v_txt" id="b">
+						<span class="sv_title">爵士乐，珍视明</span>
+						<span class="sv_detailtxt">在无尽的黑夜，彩虹都快要毁灭，一定能看到会灭</span>
+					</div>
+				</div></li>
+			<hr />
+				<li><div class="v_li">
+					<img  class="v_img" src="../img/video/v_03.jpg"/>
+					<div class="v_txt" id="c">
+						<span class="sv_title">一切皆有可能</span>
+						<span class="sv_detailtxt">所有的离别不过就是伤感的眼泪，才发现不过是稚嫩的无畏</span>
+					</div>
+				</div></li>
+			<hr />
+				<li><div class="v_li">
+					<img  class="v_img" src="../img/video/v_05.jpg"/>
+					<div class="v_txt" id="d">
+						<span class="sv_title">高手在民间</span>
+						<span class="sv_detailtxt">菜根谭月野，真释叶光寒</span>
+					</div>
+				</div></li>
+			<hr />
+				<li><div class="v_li">
+					<img  class="v_img" src="../img/video/v_06.jpg"/>
+					<div class="v_txt" id="e">
+						<span class="sv_title">你不在人间</span>
+						<span class="sv_detailtxt">假若起苍黄，已死天亦老</span>
+					</div>
+				</div></li>
+				<hr />
+				<li><div class="v_li">
+					<img  class="v_img" src="../img/video/v_04.jpg"/>
+					<div class="v_txt" id="f">
+						<span class="sv_title">童年大学转绮户</span>
+						<span class="sv_detailtxt">泊烟渚客愁新天低树 月近人寒苍山新雨后</span>
+					</div>
+				</div></li>
+			</ul>
+			
+		</div>
+		<script type="text/javascript">
+		
+            var temp = document.getElementsByClassName("v_li");
+				
+
+				console.log(temp.length);
+				for (var i = 0;i < temp.length; i++) {
+					temp[i].onclick = function(){
+				
+                        
+                         location.href = "../html/playvideo.html";
+					}
+				}
+            
+	
+</script>
+		
+	</body>
+</html>

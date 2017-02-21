@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=8">
+        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Cache-control" content="no-cache">
+        <meta http-equiv="Cache" content="no-cache">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+		<title></title>
+        <script type="text/javascript" src="../../JS/jquery-3.0.0.min.js" ></script>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			body{
+				width: 100%;
+				height: 100%;
+				background-color: aquamarine;
+			}
+			#top_title{
+				width: 98%;
+				line-height: 50px;
+				font-size: 20px;
+				color: orange;
+				text-align: center;
+				border-bottom: 1px solid lightgrey;
+				margin: 0 auto;
+			}
+			.regist_middle{
+				margin-top: 30px;
+			}
+			.login-input{
+				width: 80%;
+				line-height: 40px;
+				margin: 15px auto;
+				text-align: center;
+				/*background-color: white;*/
+			}
+			.login-input input{
+				width: 60%;
+				line-height: 25px;
+			}
+			.login-button{
+				width:30%;
+				margin:30px auto 0px auto;
+				line-height:40px;
+				font-size:14px;
+				border:#ebebeb 1px solid;
+				text-align:center;
+				background-color: orange;
+			}
+			.login-button a{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="top_title">
+			注册
+		</div>
+		<div class="regist_middle">
+		  <div class="login-input">
+            <label>用&nbsp;&nbsp;户&nbsp;&nbsp;名：</label>
+            <input type="text" placeholder="请输入手机\邮箱"  name="info[username]" id="username" class="list-input"/>
+          </div>
+        	  <div class="login-input">
+            <label>登录密码：</label>
+            <input type="password" placeholder="请输入登录密码" name="info[password]" id="password" class="list-input"/>
+          </div>
+           <div class="login-input">
+            <label>确认密码：</label>
+            <input type="password" placeholder="请确认登录密码" name="info[password]" id="password" class="list-input"/>
+          </div>
+		</div>
+		<div class="login-button"><a id="login-button-submit">登录会员</a></div>
+	</body>
+</html>

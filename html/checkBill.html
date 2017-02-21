@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+		<title>充电完成</title>
+		<script type="text/javascript" src="../JS/jquery-3.0.0.js" ></script>
+	<script type="text/javascript" src="../JS/jquery-3.0.0.min.js" ></script>
+		<style type="text/css">
+			body{background-color: rgb(245,245,245);}
+			#top{
+				margin: 0 auto;
+				width: 250px;
+				height: 190px;
+			}
+			#label{
+				background-color:blue;
+				background-image: url(../img/charging02.jpg);
+				height: 100%;
+				overflow: hidden;
+				text-align: center;
+				/*vertical-align: middle;*/
+			}
+			#top #label div{
+				/*background-color:red ;*/
+				margin-top: 165px;
+			}
+			span{
+				font-size: 20px;
+				color: black;
+				font: '微软雅黑'; 
+				/*line-height: 30px;*/
+			}
+			
+			#mid{
+				margin-top: 5%;
+				background-color:rgb(251,251,251) ;
+				text-align: center;
+				overflow: hidden;
+               
+			}
+			.ch{
+				width: 80%;
+				float: left;
+				margin-left: 10%;
+                overflow: hidden;
+           
+                position:relative;
+				/*padding: 5%;*/
+			}
+			.ch span{
+				display: block;
+				float: left;
+				/*background-color: red;*/
+				margin-left: 1%;
+				margin-top: 1%;
+				font-size: 18px;
+                text-align: center;
+				
+			}
+            .ch_span{
+                 float:right;
+                position:absolute;
+                right:30%;
+                 
+            }
+			#bot{
+				text-align: center;
+				margin-top: 5%;
+				/*background-color: blue;*/
+			}
+			#drop{
+				text-align: center;
+				overflow: hidden;
+				
+			}
+			#stop{
+				display: block;
+				padding: 15px 1%;
+				width: 20%;
+			 	color: black;
+				/*background-color:rgb(247,192,68) ;*/
+				float: left;
+			}
+			#clink{
+				float: left;
+				/*width: 60%;*/
+				/*background-color:rgb(106,142,244) ;*/
+/*				text-align: center;*/
+                position: relative;
+			}
+			.XX{
+					display: block;
+					margin:10px;
+					float: left;
+					height:20px;
+					width: 20px;
+                	position:absolute;
+                    bottom:1px;
+					background-image: url(../img/assess.png);
+					/*background-color: red;*/
+			}
+			
+			.selDiv{
+					display: block;
+					margin:10px;
+					float: left;
+					height:20px;
+					width: 20px;
+					background-image: url(../img/assess_select.png);
+			}
+			#accessA{
+				
+				width: 80%;
+				height: 100px;
+				margin:10px auto;
+				background-color:rgb(251,251,251) ;
+				font-size: 15px;
+			}
+			#upload{
+				text-align: center;
+			}
+			#upload button{
+				background-color: orange;
+				width: 40%;
+				height: 50px;
+				line-height: 30px;
+				margin: 50px auto;
+				font-size: 18px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="top">
+			<div id="label">
+				<div class = "text"><span>充电完成</span></div>
+			</div>
+		</div>
+		<div id="mid">
+			<span id="title">
+				<div class="ch" ><span>充电时长：</span><span class="value" id="time">00:11:32</span><span class="ch_span">分</span></div>
+				<div class="ch" ><span>充电金额：</span><span class="value" id="fee">4.60</span><span class="ch_span">元</span></div>
+				<div class="ch" ><span>充电电量：</span><span class="value" id="quantity">0.67</span><span class="ch_span">度</span></div>
+				<div class="ch" ><span>完成时间：</span><span class="value" id="date">2016.09.18 00:11:32</span></div>
+                <div class="ch" ><span>账单编号：</span><span class="value" id="bill">320504003</span></div>
+			</span>
+		</div>
+		<div id="bot">
+			<div id="drop">
+				<span id="stop">请评价:</span>
+				<div id="clink">
+					<div class="XX" id = "1"></div>
+					<div class="XX" id = "2"></div>
+					<div class="XX" id = "3"></div>
+					<div class="XX" id = "4"></div>
+					<div class="XX" id = "5"></div>
+				</div>
+			</div>
+			<div id="accessTxt">
+					<input type="text" id="accessA" placeholder="留下您的足迹" />
+				</div>
+		</div>
+		<div id="upload">
+			<button id="botBtn" onclick="stepfun()">提交</button>
+		</div>
+	</body>
+    <script type="text/javascript">
+	
+	$( ".XX" ).click(function() {
+        
+   
+	  $( this ).toggleClass( "selDiv" );
+        
+	});
+        
+        function stepfun(){
+            
+            var fee = document.getElementById("fee").innerHTML;
+            var quantity = document.getElementById("quantity").innerHTML;
+            var times=document.getElementById("time").innerHTML;
+            var tDate=document.getElementById("date").innerHTML;
+			
+            // location.href="../html/assess.html"; 
+             location.href='../html/assess.html?fee='+fee+'&quantity='+quantity+'&times='+times+'&tDate='+tDate;
+        }
+        
+        
+        function GetRequest() {
+            
+            //alert("hello world");
+          var url = location.search;   
+          var theRequest = new Object();  
+          if (url.indexOf("?") != -1) {  
+            var str = url.substr(1);  
+            console.log("111111111"+str);  
+            var strs= new Array();     
+             strs = str.split('&');  
+
+            var V=strs[0].substring(2).trim();  
+            var A=strs[1].substring(2).trim();
+            var fee=(strs[2].substring(4)).trim();
+            var quantity=(strs[3].substring(9)).trim(); 
+            var times=(strs[4].substring(6)).trim(); 
+              
+              
+            document.getElementById("time").innerHTML = times;
+			document.getElementById("fee").innerHTML = fee;
+			document.getElementById("quantity").innerHTML = quantity;  
+            document.getElementById("V").innerHTML = V;  
+            document.getElementById("A").innerHTML = A;  
+             
+      	}  
+	}  
+	GetRequest();  
+        
+	</script>
+</html>
