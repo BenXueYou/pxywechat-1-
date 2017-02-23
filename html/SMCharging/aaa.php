@@ -2,12 +2,12 @@
 
 
 
-require_once "lib/WxPay.Api.php"; 
-   
+require_once "lib/WxPay.Api.php";
+
 $out_trade_no = "143933040220170215152532";
-$refund_fee="1";
-$total_fee = "1";
-		
+$refund_fee="10000";
+$total_fee = "10000";
+
 
 
     $input = new WxPayRefund();
@@ -19,8 +19,8 @@ $total_fee = "1";
 
 	$order = WxPayApi::refund($input);
 
-    var_dump($order);	
-	
+    var_dump($order);
+
 echo "123";
 
 ?>
